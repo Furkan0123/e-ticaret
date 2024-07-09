@@ -1,0 +1,29 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="trainer-detail-section layout_padding">
+    <style>
+      .trainer-detail-section .img-box {
+        margin-bottom: 50px; 
+      }
+    </style>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <div class="name">
+            <h2>{{ product2.name }}</h2>
+          </div>
+          <div class="trainer-box">
+            <div class="img-box">
+              <img src="{{ product2.image.url }}" alt="{{ product2.name }}">
+            </div>
+            <div class="description">
+              <p>{{ product2.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

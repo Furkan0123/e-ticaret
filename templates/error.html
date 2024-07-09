@@ -1,0 +1,12 @@
+{% extends 'partials/_base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ödeme Hatası</title>
+</head>
+<body>
+    <h2>Ödeme işlemi başarısız oldu. Lütfen tekrar deneyin.</h2>
+    <a href="{% url 'payment' %}">Ödeme sayfasına dön</a>
+</body>
+</html>

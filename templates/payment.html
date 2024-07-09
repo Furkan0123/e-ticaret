@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ödeme</title>
+</head>
+<body>
+    <h2>Toplam Tutar: ${{ total_amount }}</h2>
+    <form action="{% url 'payment' %}" method="POST">
+        {% csrf_token %}
+        <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{ stripe_publishable_key }}"
+            data-amount="{{ total_amount|floatformat:2 }}"
+            data-name="Your Store"
+            data-description="Payment for cart"
+            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+            data-locale="auto"
+            data-currency="usd">
+        </script>
+    </form>
+</body>
+</html>
+

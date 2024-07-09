@@ -1,0 +1,13 @@
+{% block content %}
+<h2>Your Cart</h2>
+<ul>
+    {% for item in cart.items.all %}
+    <li>
+        {{ item.quantity }} x {{ item.product.name }} - ${{ item.product.price }}
+        <a href="{% url 'remove_from_cart' item.product.id %}">Remove</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'product' %}" class="btn btn-primary">Ana Sayfaya Dön</a>
+<a href="{% url 'payment' %}" class="btn btn-primary">Ödeme Yap</a>
+{% endblock %}
